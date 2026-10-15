@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071b43">
+<title>Mis XV | Danna Lucía</title>
+<style>
+:root{--navy:#092452;--blue:#173f7c;--silver:#cbd5e4;--ink:#18243b;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8faff;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button,a{font:inherit}
+button{cursor:pointer}
+.hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;padding:28px 18px;background:radial-gradient(circle at 50% 8%,#e8f0ff 0,#fff 40%,#f1f5fc 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #cbd5e4;border-radius:50%;width:75vw;height:75vw;max-width:650px;max-height:650px;opacity:.65}
+.hero:after{width:58vw;height:58vw;max-width:500px;max-height:500px}
+.sparkles{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,#9eb7e2 1px,transparent 1.8px),radial-gradient(circle,#d6dfea 1px,transparent 1.8px),radial-gradient(circle,#fff 1.2px,transparent 2px);background-size:83px 83px,127px 127px,173px 173px;background-position:12px 19px,44px 61px,83px 27px;opacity:.72;animation:twinkle 6s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.42}to{opacity:.85}}
+.disco-float{position:absolute;z-index:0;width:clamp(58px,16vw,112px);aspect-ratio:1;border-radius:50%;background-color:#c5c8ce;background-image:linear-gradient(90deg,transparent 47%,#68717d 49%,#fff 51%,transparent 54%),linear-gradient(0deg,transparent 47%,#737b86 49%,#fff 51%,transparent 54%),repeating-linear-gradient(0deg,transparent 0 10px,#707780 10.5px,#f9fbff 12px,#a7adb6 15px),repeating-linear-gradient(90deg,#9da4ae 0 10px,#fdfdff 11px 14px,#6e7782 15px 16px);background-blend-mode:screen,screen,normal,normal;border:1px solid #f7f9fc;box-shadow:inset -15px -12px 18px #18243b88,inset 8px 7px 12px #fff,0 0 0 1px #9aa3b1,0 0 30px #d9e2f4aa;animation:float 5s ease-in-out infinite;pointer-events:none;overflow:hidden}
+.disco-float:before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 27% 18%,#fff 0 5%,#ffffffaa 9%,transparent 28%),radial-gradient(ellipse at 70% 85%,#07152e88,transparent 42%),linear-gradient(120deg,#ffffff99,transparent 38%,#09245222 75%);box-shadow:inset 0 0 0 1px #fff9}
+.disco-float:after{content:"✦";position:absolute;color:#fff;font-size:clamp(13px,3vw,21px);top:7%;left:15%;text-shadow:0 0 9px #fff,0 0 18px #b9d2ff}
+.disco-a{top:8%;left:5%;width:clamp(70px,20vw,140px)}.disco-b{right:5%;top:20%;width:clamp(43px,11vw,76px);animation-delay:-2s}.disco-c{left:8%;bottom:12%;width:clamp(37px,10vw,67px);animation-delay:-3.5s}.disco-d{right:8%;bottom:8%;width:clamp(55px,14vw,96px);animation-delay:-1s}
+.hero:after{content:"✧     ✦";position:absolute;top:26%;right:18%;font-size:24px;letter-spacing:1.3em;color:#aebed7;text-shadow:0 0 12px #fff;opacity:.8;border:0;border-radius:0;width:auto;height:auto;max-width:none;max-height:none;pointer-events:none}
+
+.envelope-wrap{position:relative;z-index:1;text-align:center;width:min(100%,470px)}
+.kicker{font:600 10px/1.8 Arial,sans-serif;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.envelope{width:min(78vw,330px);height:210px;margin:28px auto 18px;position:relative;filter:drop-shadow(0 16px 18px #09245218);transition:transform .6s;cursor:pointer;perspective:800px;touch-action:manipulation}.envelope:focus-visible{outline:2px solid var(--blue);outline-offset:8px}
+.envelope .base{position:absolute;inset:0;background:linear-gradient(145deg,#fff,#eaf0f9);border:1px solid #d6deeb;border-radius:4px}
+.envelope .flap{position:absolute;inset:0;background:linear-gradient(135deg,#f8fbff,#dbe5f5);clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform .7s;z-index:2;border-top:1px solid #d0d9e8}
+.envelope .fold{position:absolute;inset:0;clip-path:polygon(0 100%,0 0,50% 60%,100% 0,100% 100%);background:linear-gradient(120deg,#fff,#e8eef8);border:1px solid #d6deeb;z-index:3}
+.seal{position:absolute;z-index:4;left:50%;top:55%;transform:translate(-50%,-50%);width:53px;height:53px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;border:2px solid #d8e0ed;box-shadow:0 0 0 4px #fff8;font-size:23px;transition:opacity .3s}
+.envelope.open .flap{transform:rotateX(180deg);opacity:.35}.envelope.open .seal{opacity:0}
+h1{font-weight:400;letter-spacing:.04em;font-size:clamp(38px,10vw,65px);line-height:1.02;margin:15px 0;color:var(--navy)}
+.subtitle{font-style:italic;color:#586a88;font-size:17px}
+.btn{border:1px solid var(--navy);border-radius:999px;padding:13px 22px;background:var(--navy);color:#fff;letter-spacing:.08em;font:600 11px Arial,sans-serif;text-transform:uppercase;box-shadow:0 8px 22px #09245220}
+.btn.secondary{background:#fff;color:var(--navy);box-shadow:none}
+.open-small{padding:7px 13px;font-size:9px;letter-spacing:.09em;opacity:.9;box-shadow:0 4px 12px #09245212}.open-hint{font:10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#71809a;margin:0 auto 10px}.envelope-wrap{z-index:1}main{display:none}main.show{display:block}
+.section{padding:78px 22px;text-align:center;position:relative;overflow:hidden}
+.section.white{background:#fff}.section.blue{background:var(--navy);color:#fff}
+.overline{font:600 10px Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#7891bb}
+.blue .overline{color:#b6c9eb}
+.section h2{font-size:clamp(32px,8vw,49px);font-weight:400;line-height:1.1;margin:15px auto;color:var(--navy)}
+.blue h2{color:#fff}
+.intro{max-width:520px;margin:0 auto;color:#64718a;font-size:17px;line-height:1.7}
+.blue .intro{color:#d6e0f2}
+.disco{width:142px;height:142px;border-radius:50%;margin:26px auto;background-color:#c6cbd2;background-image:linear-gradient(90deg,transparent 47%,#68717d 49%,#fff 51%,transparent 54%),linear-gradient(0deg,transparent 47%,#737b86 49%,#fff 51%,transparent 54%),repeating-linear-gradient(0deg,transparent 0 10px,#707780 10.5px,#f9fbff 12px,#a7adb6 15px),repeating-linear-gradient(90deg,#9da4ae 0 10px,#fdfdff 11px 14px,#6e7782 15px 16px);border:5px solid #f4f6fa;box-shadow:inset -15px -12px 18px #18243b88,inset 8px 7px 12px #fff,0 0 0 1px #9aa3b1,0 0 36px #b8c9e8aa;position:relative;animation:float 5s ease-in-out infinite;overflow:hidden}
+.disco:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 27% 18%,#fff 0 5%,#ffffffaa 9%,transparent 28%),radial-gradient(ellipse at 70% 85%,#07152e88,transparent 42%),linear-gradient(120deg,#ffffff99,transparent 38%,#09245222 75%);box-shadow:inset 0 0 0 1px #fff9}
+.disco:before{content:"✦";position:absolute;z-index:1;top:8%;left:14%;color:#fff;text-shadow:0 0 10px #fff,0 0 20px #abcaff}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(8deg)}}
+.datebox{max-width:420px;margin:32px auto 0;padding:25px 18px;border-top:1px solid #cbd5e4;border-bottom:1px solid #cbd5e4;display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:10px}
+.datebox strong{display:block;font-size:44px;font-weight:400;color:var(--navy)}.datebox span{font:10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#64718a}
+.details{max-width:520px;margin:30px auto;display:grid;gap:14px}
+.detail{border:1px solid #dce4f0;background:#fff;padding:20px 16px;border-radius:12px}
+.detail b{display:block;color:var(--navy);font:600 10px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-bottom:9px}
+.detail span{font-size:17px;color:#5d6c85}
+.countdown{display:flex;justify-content:center;gap:10px;margin:28px 0;flex-wrap:wrap}
+.count{min-width:70px;padding:13px 9px;border:1px solid #506993;border-radius:10px}
+.count strong{font-size:28px;font-weight:400;display:block}.count span{font:9px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#b6c9eb}
+footer{padding:30px 15px;text-align:center;background:#061735;color:#dce6f7;font-size:13px;font-style:italic}
+.music{position:fixed;right:14px;bottom:14px;z-index:5;border:1px solid #d1dced;border-radius:999px;background:#fff;color:var(--navy);padding:12px 15px;box-shadow:0 5px 18px #09245222;font:600 11px Arial,sans-serif;display:none}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}
+.note{font:12px/1.6 Arial,sans-serif;color:#7c879a;margin-top:22px}
+.theme-grid{max-width:760px;margin:28px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}.theme-card{border:1px solid #dce4f0;border-radius:14px;padding:20px 14px;background:#fff;color:var(--ink);text-align:center}.theme-card .symbol{font-size:28px;display:block;margin-bottom:10px}.theme-card h3{font:600 11px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--navy)}.theme-card p{font-size:14px;line-height:1.55;color:#64718a}.palette{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px auto}.swatch{width:44px;height:44px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1px #b7c5da;cursor:pointer}.swatch:focus,.swatch.selected{outline:2px solid var(--navy);outline-offset:4px}.palette-note{min-height:44px;max-width:470px;margin:0 auto;color:#5d6c85;font-size:15px;line-height:1.6}.rsvp-form{max-width:440px;margin:22px auto 0;display:grid;gap:12px;text-align:left}.rsvp-form label{font:600 10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--navy)}.rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;padding:13px;border:1px solid #d1dced;border-radius:9px;background:#fff;color:var(--ink);font:15px Arial,sans-serif}.rsvp-form .btn{width:100%}.glow{position:absolute;width:260px;height:260px;border-radius:50%;background:#8caeea22;filter:blur(28px);pointer-events:none}.glow.one{top:-90px;left:-100px}.glow.two{right:-100px;bottom:-90px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<section class="hero" id="start">
+ <div class="sparkles"></div><div class="glow one"></div><div class="glow two"></div><div class="disco-float disco-a" aria-hidden="true"></div><div class="disco-float disco-b" aria-hidden="true"></div><div class="disco-float disco-c" aria-hidden="true"></div><div class="disco-float disco-d" aria-hidden="true"></div>
+ <div class="envelope-wrap">
+  <div class="kicker">Una noche para brillar · 2026</div>
+  <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Toca el sobre para abrir la invitación">
+   <div class="base"></div><div class="flap"></div><div class="fold"></div><div class="seal">✦</div>
+  </div>
+  <p class="subtitle">Estás cordialmente invitado/a a celebrar</p>
+  <h1 style="font-size:clamp(32px,8vw,48px)">Mis XV años</h1>
+  <p class="open-hint">Toca el sobre para abrirlo</p><button class="btn open-small" id="openInvite" type="button">Abrir invitación</button>
+  <p class="note">Danna Lucía Pacheco Restrepo</p>
+ </div>
+</section>
+<main id="invitation">
+ <section class="section white">
+  <div class="overline reveal">Una noche mágica</div>
+  <div class="disco reveal" aria-hidden="true"></div>
+  <h2 class="reveal">Danna Lucía<br><i>Mis XV años</i></h2>
+  <p class="intro reveal">Hay momentos que brillan para siempre. Me encantaría compartir contigo una noche llena de música, alegría y recuerdos inolvidables.</p>
+  <div class="datebox reveal"><div><span>Domingo</span></div><div><strong>15</strong><span>Noviembre · 2026</span></div><div><span>Mis XV</span></div></div>
+  <p class="note reveal">Blanco, azul noche y destellos de plata 🪩</p>
+  <div class="theme-grid">
+   <article class="theme-card reveal"><span class="symbol">🪩</span><h3>Noche disco</h3><p>Destellos, reflejos y una pista lista para brillar.</p></article>
+   <article class="theme-card reveal"><span class="symbol">✧</span><h3>Glamour plateado</h3><p>Detalles metálicos, luces elegantes y brillo sutil.</p></article>
+   <article class="theme-card reveal"><span class="symbol">🌙</span><h3>Azul noche</h3><p>Una atmósfera sofisticada en azul marino, blanco y plata.</p></article>
+  </div>
+ </section>
+ <section class="section blue">
+  <div class="overline reveal">Cuenta regresiva</div><h2 class="reveal">La noche se acerca</h2>
+  <p class="intro reveal">¡Prepárate para brillar conmigo!</p>
+  <div class="countdown reveal" id="countdown">
+   <div class="count"><strong id="days">—</strong><span>Días</span></div><div class="count"><strong id="hours">—</strong><span>Horas</span></div><div class="count"><strong id="minutes">—</strong><span>Minutos</span></div><div class="count"><strong id="seconds">—</strong><span>Segundos</span></div>
+  </div>
+ </section>
+ <section class="section white">
+  <div class="overline reveal">Guarda la fecha</div><h2 class="reveal">Celebremos juntos</h2>
+  <div class="details">
+   <div class="detail reveal"><b>La hora</b><span>8:00 p. m. – 2:00 a. m.</span></div>
+   <div class="detail reveal"><b>El lugar</b><span>Salón de Eventos D'C Event Planning</span><p><a href="https://maps.app.goo.gl/AJaLvNyuW8X6M7hf7?g_st=iwb" target="_blank" rel="noopener" style="color:#173f7c;font:600 12px Arial,sans-serif">Ver ubicación en Google Maps ↗</a></p></div>
+   <div class="detail reveal"><b>Código de vestimenta</b><span>Formal elegante · Trajes y vestidos de gala</span></div>
+   <div class="detail reveal"><b>Temática</b><span>Noche disco elegante: luces, destellos plateados y glamour.</span></div>
+  </div>
+  <p class="intro reveal">Tu presencia hará esta noche aún más especial. Para que mi vestido sea una sorpresa, te pido reservar la gama de azules para la quinceañera. 💙</p>
+  <section class="detail reveal" style="max-width:520px;margin:26px auto">
+   <div class="overline">Una pequeña petición</div><h2 style="font-size:clamp(26px,7vw,36px);margin:12px auto">El azul es mi color</h2>
+   <p class="intro">Toca un tono para descubrir la paleta de mi vestido. Por favor, evita estos tonos al elegir tu atuendo para que mi vestido siga siendo una sorpresa.</p>
+   <div class="palette" aria-label="Gama de azules reservada para la quinceañera">
+    <button class="swatch selected" style="background:#071b43" aria-label="Azul noche" data-tone="Azul noche" data-note="Azul noche: reservado para el vestido de la quinceañera." type="button"></button>
+    <button class="swatch" style="background:#173f7c" aria-label="Azul real" data-tone="Azul real" data-note="Azul real: también forma parte de la gama reservada." type="button"></button>
+    <button class="swatch" style="background:#7196d1" aria-label="Azul suave" data-tone="Azul suave" data-note="Azul suave: mejor elegir otro color para dejar el azul para Danna." type="button"></button>
+    <button class="swatch" style="background:#b7cbe8" aria-label="Azul hielo" data-tone="Azul hielo" data-note="Azul hielo: incluido en la paleta reservada para la quinceañera." type="button"></button>
+    <button class="swatch" style="background:#d9e3f2" aria-label="Azul plateado" data-tone="Azul plateado" data-note="Azul plateado: también lo guardamos para el vestido sorpresa." type="button"></button>
+   </div>
+   <p class="palette-note" id="paletteNote" aria-live="polite">Azul noche: reservado para el vestido de la quinceañera.</p>
+  </section>
+  <p class="intro reveal">Confirma tu asistencia para que podamos organizar cada detalle.</p>
+  <form class="rsvp-form reveal" id="rsvpForm">
+   <div><label for="guestName">Tu nombre</label><input id="guestName" name="guestName" autocomplete="name" required placeholder="Nombre y apellido"></div>
+   <div><label for="guestCount">¿Cuántas personas asistirán?</label><select id="guestCount" name="guestCount"><option value="1">1 persona</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option></select></div>
+   <div><label for="guestReply">Confirmación</label><select id="guestReply" name="guestReply"><option value="Sí asistiré">¡Sí, asistiré!</option><option value="No podré asistir">No podré asistir</option></select></div>
+   <button class="btn" type="submit">Confirmar por WhatsApp ✦</button>
+  </form>
+  <p class="note">La confirmación abre WhatsApp con un mensaje listo para enviar. Se debe configurar el número de contacto antes de compartir la invitación.</p>
+ </section>
+ <footer>Con cariño, Danna Lucía · Mis XV años ✦</footer>
+</main>
+<button class="music" id="musicBtn" type="button">♫ Activar música</button>
+<audio id="music" loop preload="none" src="musica.mp3"></audio>
+<script>
+const openBtn=document.getElementById('openInvite'), env=document.getElementById('envelope'), main=document.getElementById('invitation'), musicBtn=document.getElementById('musicBtn'), audio=document.getElementById('music');
+// Antes de compartir, cambia este texto por el número de WhatsApp de contacto con código de país, solo números (ej. 57 + número). Es preferible usar el de un adulto responsable.
+const WHATSAPP_NUMBER = '57XXXXXXXXXX';
+let inviteOpened=false;function openInvitation(){if(inviteOpened)return;inviteOpened=true;env.classList.add('open');openBtn.textContent='Invitación abierta ✓';openBtn.disabled=true;openBtn.style.opacity='.65';setTimeout(()=>{main.classList.add('show');musicBtn.style.display='block';main.scrollIntoView({behavior:'smooth'});observeReveals()},650)}openBtn.addEventListener('click',openInvitation);env.addEventListener('click',openInvitation);env.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openInvitation()}});
+let playing=false;
+musicBtn.addEventListener('click',async()=>{if(!audio.src || !audio.src.endsWith('/musica.mp3')){alert('Añade tu archivo de audio a la carpeta de la página y llámalo musica.mp3. Usa una canción que tengas permiso para compartir.');return}try{if(!playing){await audio.play();playing=true;musicBtn.textContent='♫ Pausar música'}else{audio.pause();playing=false;musicBtn.textContent='♫ Activar música'}}catch(e){alert('No se pudo reproducir. Toca de nuevo para intentarlo.')}});
+document.querySelectorAll('.swatch').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('selected'));button.classList.add('selected');document.getElementById('paletteNote').textContent=button.dataset.note;}));
+document.getElementById('rsvpForm').addEventListener('submit',event=>{event.preventDefault();if(!/^\d{10,15}$/.test(WHATSAPP_NUMBER)){alert('Falta configurar el número de WhatsApp de confirmación. Por seguridad, usa preferiblemente el número de un adulto responsable.');return;}const name=document.getElementById('guestName').value.trim();const count=document.getElementById('guestCount').value;const reply=document.getElementById('guestReply').value;const message=`Hola, soy ${name}. Sobre los XV de Danna Lucía Pacheco Restrepo: ${reply}. Cantidad de personas: ${count}.`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,'_blank','noopener');});
+function updateCountdown(){const target=new Date('2026-11-15T18:00:00');const diff=target-new Date();const val=Math.max(0,diff);document.getElementById('days').textContent=Math.floor(val/86400000);document.getElementById('hours').textContent=Math.floor(val%86400000/3600000);document.getElementById('minutes').textContent=Math.floor(val%3600000/60000);document.getElementById('seconds').textContent=Math.floor(val%60000/1000)}
+updateCountdown();setInterval(updateCountdown,1000);
+function observeReveals(){const els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('visible'));return}const io=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target)}}),{threshold:.12});els.forEach(e=>io.observe(e))}
+</script>
+</body>
+</html>
